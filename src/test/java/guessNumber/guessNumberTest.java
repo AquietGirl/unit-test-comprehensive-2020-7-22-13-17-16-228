@@ -104,4 +104,16 @@ public class guessNumberTest {
         //then
         assertEquals("Wrong Input,Input again", result);
     }
+
+    @Test
+    void should_return_wrong_input_input_again_when_has_repeat_number() {
+        //given
+        int[] inputNumber = {1, 1, 3, 4};
+        GuessNumber guessNumberGame = new GuessNumber();
+
+        //when
+        String result = guessNumberGame.guessNumber(inputNumber);
+        //then
+        assertEquals("Wrong Input,Input again", result);
+    }
 }
