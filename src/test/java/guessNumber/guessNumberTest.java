@@ -116,4 +116,16 @@ public class guessNumberTest {
         //then
         assertEquals("Wrong Input,Input again", result);
     }
+
+    @Test
+    void should_returnwrong_input_input_again_when_input_number_out_of_range() {
+        //given
+        int[] inputNumber = {-1, 11, 3, 4};
+        GuessNumber guessNumberGame = new GuessNumber();
+
+        //when
+        String result = guessNumberGame.guessNumber(inputNumber);
+        //then
+        assertEquals("Wrong Input,Input again", result);
+    }
 }
