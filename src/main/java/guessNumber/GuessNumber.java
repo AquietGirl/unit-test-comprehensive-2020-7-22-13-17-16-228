@@ -5,7 +5,12 @@ import java.util.HashSet;
 import java.util.stream.IntStream;
 
 public class GuessNumber {
-    int[] answer = {1, 2, 3, 4};
+//    int[] answer = {1, 2, 3, 4};
+    private int[] answer;
+
+    public GuessNumber(int[] answer){
+        this.answer = answer;
+    }
 
     public String guessNumber(int[] inputNumber) {
 

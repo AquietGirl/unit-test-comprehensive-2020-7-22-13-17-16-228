@@ -1,6 +1,6 @@
 package guessNumber;
 
-public class GenerateAnswer {
+public class GenerateAnswer implements IGenerate{
     public int[] generate() {
         int length = 4;
         int maxNum = 9;
