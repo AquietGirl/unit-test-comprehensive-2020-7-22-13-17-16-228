@@ -1,6 +1,7 @@
 package guessNumber;
 
 import java.util.Arrays;
+import java.util.stream.IntStream;
 
 public class GuessNumber {
     int[] answer = {1, 2, 3, 4};
@@ -15,6 +16,17 @@ public class GuessNumber {
                 isHasEqual = true;
             }
         }
+        int b = 0;
+        for (int i = 0; i< inputNumber.length;i++) {
+            int index = i;
+            if (IntStream.of(answer).anyMatch(x -> x == inputNumber[index])){
+                b++;
+            }
+        }
+        if (!isHasEqual && b==4){
+            return "0A4B";
+        }
+
         if (!isHasEqual){
             return "0A0B";
         }
