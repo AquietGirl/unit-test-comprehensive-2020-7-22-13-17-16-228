@@ -92,4 +92,16 @@ public class guessNumberTest {
         //then
         assertEquals("Wrong Input,Input again", result);
     }
+
+    @Test
+    void should_return_wrong_input_input_again_which_input_number_length_is_longer_than_4() {
+        //given
+        int[] inputNumber = {1, 2, 3, 4, 5, 6, 7};
+        GuessNumber guessNumberGame = new GuessNumber();
+
+        //when
+        String result = guessNumberGame.guessNumber(inputNumber);
+        //then
+        assertEquals("Wrong Input,Input again", result);
+    }
 }
