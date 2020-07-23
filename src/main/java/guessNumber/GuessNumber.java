@@ -7,6 +7,9 @@ public class GuessNumber {
     int[] answer = {1, 2, 3, 4};
 
     public String guessNumber(int[] inputNumber) {
+        if (inputNumber.length < 4) {
+            return "Wrong Input,Input again";
+        }
         int a = 0, b = 0;
         for (int index = 0; index < inputNumber.length; index++) {
             if (inputNumber[index] == answer[index]) {
