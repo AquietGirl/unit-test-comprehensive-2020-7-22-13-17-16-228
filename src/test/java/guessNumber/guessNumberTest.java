@@ -31,4 +31,17 @@ public class guessNumberTest {
         //then
         assertEquals("0A0B", result);
     }
+
+    @Test
+    void should_return_0A4B_when_guess_number_given_number_of_incorrect_position_but_correct_number() {
+        //given
+        int[] inputNumber = {4, 3, 2, 1};
+        GuessNumber guessNumberGame = new GuessNumber();
+
+        //when
+        String result = guessNumberGame.guessNumber(inputNumber);
+
+        //then
+        assertEquals("0A4B", result);
+    }
 }
