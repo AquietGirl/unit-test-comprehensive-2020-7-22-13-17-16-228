@@ -80,4 +80,16 @@ public class guessNumberTest {
         //then
         assertEquals("0A2B", result);
     }
+
+    @Test
+    void should_return_wrong_input_input_again_which_input_number_length_is_shorter_than_4() {
+        //given
+        int[] inputNumber = {1, 9};
+        GuessNumber guessNumberGame = new GuessNumber();
+
+        //when
+        String result = guessNumberGame.guessNumber(inputNumber);
+        //then
+        assertEquals("Wrong Input,Input again", result);
+    }
 }
