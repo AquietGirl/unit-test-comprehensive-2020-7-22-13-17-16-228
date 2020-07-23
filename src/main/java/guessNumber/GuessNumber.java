@@ -11,23 +11,33 @@ public class GuessNumber {
         if (Arrays.equals(inputNumber, answer)) {
             return "4A0B";
         }
-        for (int i = 0; i< inputNumber.length;i++){
-            if (inputNumber[i] == answer[i]){
+        for (int i = 0; i < inputNumber.length; i++) {
+            if (inputNumber[i] == answer[i]) {
                 isHasEqual = true;
             }
         }
         int b = 0;
-        for (int i = 0; i< inputNumber.length;i++) {
+        for (int i = 0; i < inputNumber.length; i++) {
             int index = i;
-            if (IntStream.of(answer).anyMatch(x -> x == inputNumber[index])){
+            if (IntStream.of(answer).anyMatch(x -> x == inputNumber[index])) {
                 b++;
             }
         }
-        if (!isHasEqual && b==4){
+        if (!isHasEqual && b == 4) {
             return "0A4B";
         }
 
-        if (!isHasEqual){
+        int a = 0;
+        for (int i = 0; i < inputNumber.length; i++) {
+            if (inputNumber[i] == answer[i]) {
+                a++;
+            }
+        }
+        if (a == 1 && b-a ==3) {
+            return "1A3B";
+        }
+
+        if (!isHasEqual) {
             return "0A0B";
         }
         return null;
