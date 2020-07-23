@@ -10,6 +10,9 @@ public class GuessNumber {
         if (inputNumber.length < 4) {
             return "Wrong Input,Input again";
         }
+        if (inputNumber.length > 4) {
+            return "Wrong Input,Input again";
+        }
         int a = 0, b = 0;
         for (int index = 0; index < inputNumber.length; index++) {
             if (inputNumber[index] == answer[index]) {
