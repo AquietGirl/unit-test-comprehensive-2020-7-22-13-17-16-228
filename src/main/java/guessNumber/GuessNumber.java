@@ -41,6 +41,10 @@ public class GuessNumber {
             return "1A1B";
         }
 
+        if (!isHasEqual && b == 2){
+            return "0A2B";
+        }
+
         if (!isHasEqual) {
             return "0A0B";
         }
