@@ -17,6 +17,10 @@ public class GuessNumber {
             return "Wrong Input,Input again";
         }
 
+        if (isNumberOutOfRange(inputNumber)){
+            return "Wrong Input,Input again";
+        }
+
         int a = 0, b = 0;
         for (int index = 0; index < inputNumber.length; index++) {
             if (inputNumber[index] == answer[index]) {
@@ -37,5 +41,14 @@ public class GuessNumber {
             hashSet.add(value);
         }
         return hashSet.size() == array.length;
+    }
+
+    public boolean isNumberOutOfRange(int[] inputNumber) {
+        for (int number : inputNumber) {
+            if (number < 0 || number > 9){
+                return true;
+            }
+        }
+        return false;
     }
 }
