@@ -13,6 +13,9 @@ public class GameProcess {
     }
 
     public String play(int[] inputNumber) {
+        if (this.getGameCount() > 6) {
+            return "Game Over";
+        }
         guessNumber.guessNumber(inputNumber);
 
         return null;
