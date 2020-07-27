@@ -1,31 +1,15 @@
 package guessNumber;
 
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.stream.IntStream;
 
 public class GuessNumber {
-//    int[] answer = {1, 2, 3, 4};
     private int[] answer;
 
-    public GuessNumber(int[] answer){
+    public GuessNumber(int[] answer) {
         this.answer = answer;
     }
 
-    public String guessNumber(int[] inputNumber) {
-
-        if (inputNumber.length != 4) {
-            return "Wrong Input,Input again";
-        }
-
-        if (!isNotRepeat(inputNumber)) {
-            return "Wrong Input,Input again";
-        }
-
-        if (isNumberOutOfRange(inputNumber)){
-            return "Wrong Input,Input again";
-        }
-
+    public String getGameResult(int[] inputNumber) {
         int a = 0, b = 0;
         for (int index = 0; index < inputNumber.length; index++) {
             if (inputNumber[index] == answer[index]) {
@@ -40,20 +24,5 @@ public class GuessNumber {
         return a + "A" + b + "B";
     }
 
-    public boolean isNotRepeat(int[] array) {
-        HashSet<Integer> hashSet = new HashSet<Integer>();
-        for (int value : array) {
-            hashSet.add(value);
-        }
-        return hashSet.size() == array.length;
-    }
 
-    public boolean isNumberOutOfRange(int[] inputNumber) {
-        for (int number : inputNumber) {
-            if (number < 0 || number > 9){
-                return true;
-            }
-        }
-        return false;
-    }
 }
