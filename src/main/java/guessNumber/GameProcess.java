@@ -5,11 +5,11 @@ public class GameProcess {
     private int gameCount;
     private static final String WRONG_INPUT_MEG = "Wrong Input,Input again";
     private static final String GAME_OVER = "Game Over";
+    private static final String GAME_WIN = "win, all correct";
     private GuessNumber guessNumber;
     private InputValidator inputValidator;
 
-    public GameProcess() {
-        GenerateAnswer generateAnswer = new GenerateAnswer();
+    public GameProcess(GenerateAnswer generateAnswer) {
         inputValidator = new InputValidator();
         int[] answer = generateAnswer.generate();
         this.guessNumber = new GuessNumber(answer);
@@ -37,7 +37,7 @@ public class GameProcess {
 
     private String outPutGameResult(String gameResult) {
         if (gameResult !=null && gameResult.equals("4A0B")) {
-            return "win, all correct";
+            return GAME_WIN;
         }
         return gameResult;
     }
