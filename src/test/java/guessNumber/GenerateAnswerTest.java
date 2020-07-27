@@ -17,16 +17,4 @@ public class GenerateAnswerTest {
         //then
         assertEquals(4, result.length);
     }
-//
-//    @Test
-//    void should_return_answer_with_no_repeat_length_when_generate_answer(){
-//        //given
-//        GenerateAnswer generateAnswer = new GenerateAnswer();
-//
-//        //when
-//        int[] result = generateAnswer.generate();
-//
-//        //then
-//        assertEquals(4, result.length);
-//    }
 }

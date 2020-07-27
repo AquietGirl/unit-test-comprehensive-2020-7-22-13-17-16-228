@@ -29,6 +29,7 @@ public class GameProcess {
             return GAME_OVER;
         }
         if (!inputValidator.isValidInputNumber(inputNumber)){
+            this.gameCount++;
             return WRONG_INPUT_MEG;
         }
         this.gameCount++;
