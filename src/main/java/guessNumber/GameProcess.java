@@ -31,6 +31,7 @@ public class GameProcess {
         if (!inputValidator.isValidInputNumber(inputNumber)){
             return WRONG_INPUT_MEG;
         }
+        this.gameCount++;
         String gameResult = guessNumber.getGameResult(inputNumber);
         return outPutGameResult(gameResult);
     }
