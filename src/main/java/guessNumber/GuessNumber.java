@@ -10,18 +10,18 @@ public class GuessNumber {
     }
 
     public String getGameResult(int[] inputNumber) {
-        int a = 0, b = 0;
+        int countA = 0, countB = 0;
         for (int index = 0; index < inputNumber.length; index++) {
             if (inputNumber[index] == answer[index]) {
-                a++;
+                countA++;
             } else {
                 int finalIndex = index;
                 if (IntStream.of(answer).anyMatch(x -> x == inputNumber[finalIndex])) {
-                    b++;
+                    countB++;
                 }
             }
         }
-        return a + "A" + b + "B";
+        return countA + "A" + countB + "B";
     }
 
 
