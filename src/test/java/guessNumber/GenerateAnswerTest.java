@@ -17,4 +17,5 @@ public class GenerateAnswerTest {
         //then
         assertEquals(4, result.length);
     }
+
 }

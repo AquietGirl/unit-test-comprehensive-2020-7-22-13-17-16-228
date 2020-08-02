@@ -4,8 +4,10 @@ import java.util.HashSet;
 
 public class InputValidator {
 
+    private static final int NUMBER_LENGTH = 4;
+
     public boolean isValidInputNumber(int[] inputNumber) {
-        return inputNumber.length == 4 && isNotRepeat(inputNumber) && !isNumberOutOfRange(inputNumber);
+        return inputNumber.length == NUMBER_LENGTH && isNotRepeat(inputNumber) && !isNumberOutOfRange(inputNumber);
     }
 
     private boolean isNotRepeat(int[] array) {

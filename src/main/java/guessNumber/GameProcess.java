@@ -6,6 +6,8 @@ public class GameProcess {
     private static final String WRONG_INPUT_MEG = "Wrong Input,Input again";
     private static final String GAME_OVER = "Game Over";
     private static final String GAME_WIN = "win, all correct";
+    private static final String GAME_CORRECT_RESULT = "4A0B";
+    private static final int GAME_TOTAL_TIMES = 6;
     private GuessNumber guessNumber;
     private InputValidator inputValidator;
 
@@ -25,20 +27,19 @@ public class GameProcess {
     }
 
     public String play(int[] inputNumber) {
-        if (this.getGameCount() > 6) {
+        this.gameCount++;
+        if (this.getGameCount() > GAME_TOTAL_TIMES) {
             return GAME_OVER;
         }
         if (!inputValidator.isValidInputNumber(inputNumber)){
-            this.gameCount++;
             return WRONG_INPUT_MEG;
         }
-        this.gameCount++;
         String gameResult = guessNumber.getGameResult(inputNumber);
         return outPutGameResult(gameResult);
     }
 
     private String outPutGameResult(String gameResult) {
-        if (gameResult !=null && gameResult.equals("4A0B")) {
+        if ((GAME_CORRECT_RESULT).equals(gameResult)) {
             return GAME_WIN;
         }
         return gameResult;

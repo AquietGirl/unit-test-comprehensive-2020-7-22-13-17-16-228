@@ -13,11 +13,13 @@ public class GameProcessTest {
     @Test
     void should_return_game_over_when_game_count_exceed_6() {
         //given
-        int[] inputNumber = {1, 2, 3, 4};
+        int[] inputNumber = {5, 6, 7, 8};
         GenerateAnswer generateAnswer = Mockito.mock(GenerateAnswer.class);
         when(generateAnswer.generate()).thenReturn(answerMockit);
         GameProcess gameProcess = new GameProcess(generateAnswer);
-        gameProcess.setGameCount(7);
+        for (int i = 0; i< 6; i++){
+            gameProcess.play(inputNumber);
+        }
 
         //when
         String result = gameProcess.play(inputNumber);

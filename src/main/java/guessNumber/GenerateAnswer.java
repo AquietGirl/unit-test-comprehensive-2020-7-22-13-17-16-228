@@ -2,7 +2,7 @@ package guessNumber;
 
 import java.util.Random;
 
-public class GenerateAnswer implements IGenerate{
+public class GenerateAnswer{
     public int[] generate() {
         int length = 4;
         int[] result = new int[length];
